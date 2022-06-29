@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOCUMENT</title>
+    </head>
+    <body>
+        <script>
+            function func1(n)
+            {
+                return new Promise(function(resolve, reject)
+                { 
+                    if(!isNaN(n))
+                    {
+                        resolve("It is a Number");
+                    }
+                    else
+                    {
+                        reject("It is not a Number");
+                    }
+                });
+            }
+            async function func2(n){
+                try{
+                    var temp=await func1(n);
+                    console.log(temp);
+                }
+                catch(error)
+                {
+                    console.log(error);
+                }
+            }
+            func2(123)
+        </script>
+    </body>
+</html>
